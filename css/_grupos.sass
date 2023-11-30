@@ -1,0 +1,106 @@
+@import mixins
+
+$correcto: #1ed12d
+$incorrecto: #bb2929
+    
+.formulario
+    @include flex(row, wrap, space-between, space-between)
+    @include movil()
+        @include flex(column, wrap, space-between, space-between)
+    &__grupo
+        width: 48%
+        margin-bottom: 10px
+        @include movil
+            width: 100%
+        &-terminos
+            width: 100%
+        &-input
+            position: relative
+            margin: 10px 0
+        &-btn-enviar
+            width: 100%
+            text-align: center
+            margin-top: 20px
+        &-correcto
+            .formulario__validacion-estado
+                color: $correcto
+                opacity: 1
+        &-incorrecto
+            .formulario__label
+                color: $incorrecto
+            .formulario__validacion-estado
+                color: $incorrecto
+                opacity: 1
+            .formulario__input
+                border: 3px solid $incorrecto
+    &__label
+        display: block
+        padding: 10px
+        font-weight: 700
+        cursor: pointer
+    &__input
+        width: 100%
+        background: #fff
+        height: 45px
+        line-height: 45px
+        padding: 0 40px 0 10px  
+        border: 3px solid transparent
+        border-radius: 3px
+        transition: 0.3s ease all
+        &:focus
+            border: 3px solid #0075ff
+            outline: none
+            box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4)
+        &-error
+            font-size: 12px
+            margin-bottom: 0
+            display: none
+            &-activo
+                display: block
+    &__checkbox
+        margin-right: 10px
+    &__validacion-estado
+        position: absolute
+        right: 10px
+        bottom: 15px
+        z-index: 100
+        font-size: 17px
+        opacity: 0
+    &__mensaje
+        height: 45px
+        line-height: 45px
+        width: 100%
+        background: #f66060
+        padding: 0 15px
+        border-radius: 3px
+        display: none
+        @include movil(545px)
+            text-align: center
+            height: 90px
+            line-height: 45px
+        &-activo
+            display: block
+        &-exito
+            font-size: 14px
+            color: $correcto
+            display: none
+            &-activo
+                display: block 
+    &__btn
+        background-color: black
+        color: white
+        font-weight: bold
+        padding: 10px 75px
+        border: none
+        border-radius: 3px
+        cursor: pointer
+        transition: 0.1 ease all
+        margin-bottom: 10px
+        @include movil()
+            width: 100%
+        &:hover
+            box-shadow: 3px 0px 30px rgba(163, 163, 163, 1)
+        
+           
+    
+

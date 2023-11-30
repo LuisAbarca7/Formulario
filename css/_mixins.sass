@@ -1,0 +1,9 @@
+@mixin flex($dir, $corte, $just, $align)
+    display: flex
+    flex-flow: $dir $corte
+    justify-content: $just
+    align-content: $align
+
+@mixin movil ($media : 800px)
+    @media screen and (max-width: $media)
+        @content
